@@ -1,0 +1,3 @@
+nohup: ignoring input
+/home/muzamil/plus gpt/nanoGPT/train.py:203: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=(dtype == 'float16'))

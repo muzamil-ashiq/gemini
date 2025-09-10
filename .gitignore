@@ -1,0 +1,16 @@
+## Ignore model checkpoints and outputs
+out/
+*.pt
+*.ckpt
+*.ckp
+ckpt/
+
+## Python caches
+__pycache__/
+.pytest_cache/
+
+## Jupyter
+.ipynb_checkpoints/
+
+## OS
+.DS_Store

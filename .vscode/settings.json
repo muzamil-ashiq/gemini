@@ -1,0 +1,11 @@
+{
+  "terminal.integrated.env.linux": {
+    "GEMINI_CONFIG_DIR": "${env:HOME}/.config/gemini-vscode"
+  },
+  "terminal.integrated.env.osx": {
+    "GEMINI_CONFIG_DIR": "${env:HOME}/.config/gemini-vscode"
+  },
+  "terminal.integrated.env.windows": {
+    "GEMINI_CONFIG_DIR": "${env:USERPROFILE}\\.config\\gemini-vscode"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "gemini_attention_config": {
+    "description": "This configuration guides Gemini's internal attention mechanism and response generation to align with project goals.",
+    "attention_alignment": {
+      "self_temperature": {
+        "value": 1.2,
+        "description": "Influences the creativity and exploratory nature of Gemini's response generation. A value of 1.2 encourages a balance of coherence and novel ideas, similar to the model's optimal setting."
+      },
+      "t_masking": {
+        "value": 30,
+        "description": "A conceptual 'mask' that helps Gemini focus its attention on the most relevant and high-probability information, filtering out less significant details. A value of 30 indicates a broad but focused attention span."
+      },
+      "context_reuse_evaluation": {
+        "strategy": "dynamic_relevance_scoring",
+        "description": "Gemini will dynamically score the relevance of past conversational context and project files, prioritizing information that directly contributes to the current task and long-term project goals. This ensures efficient and pertinent context reuse."
+      }
+    },
+    "response_generation_principles": {
+      "clarity_priority": true,
+      "conciseness_priority": true,
+      "actionability_priority": true,
+      "adaptability_to_user_style": true
+    },
+    "additional_beneficial_directives": [
+      "Prioritize user's stated preferences and long-term project vision.",
+      "Proactively identify potential issues or areas for improvement.",
+      "Maintain a positive and collaborative tone.",
+      "Ensure all code modifications adhere to existing project conventions.",
+      "Provide clear and concise explanations for all technical concepts."
+    ]
+  }
+}

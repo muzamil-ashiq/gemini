@@ -1,0 +1,11 @@
+What are the files in the current directory? [TOOL] list_files
+Read the file 'gears.md'. [TOOL] read_file 'gears.md'
+Who is the current user? [TOOL] run_shell_command 'whoami'
+What is the date today? [TOOL] run_shell_command 'date'
+What time is it? [TOOL] run_shell_command 'date'
+Calculate 2 + 2. [TOOL] run_shell_command 'echo $((2 + 2))'
+What is 10 * 5? [TOOL] run_shell_command 'echo $((10 * 5))'
+List the files in the NeoX-GPT directory. [TOOL] list_files 'NeoX-GPT'
+Show me the first 10 lines of the README.md file. [TOOL] read_file 'README.md' limit=10
+Create a new file called 'test.txt' with the content 'hello world'. [TOOL] write_file 'test.txt' 'hello world'
+Search for the word 'attention' in the model.py file. [TOOL] search_file_content 'attention' include='model.py'
