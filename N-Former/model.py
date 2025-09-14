@@ -485,7 +485,21 @@ class GPT(nn.Module):
         # Create AdamW optimizer with fused option if available and on CUDA
         fused_available = 'fused' in inspect.signature(torch.optim.AdamW).parameters
         use_fused = fused_available and device_type == 'cuda'
-        extra_args = dict(fused=True) if use_fused else dict()
+        
+        # Fused optimizer may have issues with multiple parameter groups, disable if needed
+        if use_fused and len(optim_groups) > 1:
+            try:
+                # Test creating optimizer with fused=True first
+                test_optimizer = torch.optim.AdamW(optim_groups, lr=learning_rate, betas=betas, fused=True)
+                extra_args = dict(fused=True)
+            except Exception as e:
+                print(f"Warning: Fused AdamW failed with multiple parameter groups: {e}")
+                print("Falling back to non-fused AdamW")
+                use_fused = False
+                extra_args = dict()
+        else:
+            extra_args = dict(fused=True) if use_fused else dict()
+            
         optimizer = torch.optim.AdamW(optim_groups, lr=learning_rate, betas=betas, **extra_args)
         print(f"using fused AdamW: {use_fused}")
 
